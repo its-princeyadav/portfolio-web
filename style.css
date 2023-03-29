@@ -429,6 +429,135 @@
   color: #333333;
   text-align: center;
 }
+.progress-section-main-wrapper {
+  background-color: #f6f6f6;
+}
+.progress-section-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 100px 115px 100px 115px;
+}
+.box {
+  position: relative;
+  display: block;
+  background: #004b91;
+  text-align: center;
+  color: white;
+  width: 250px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+/* .box:hover {
+  background: #196fc2;
+} */
+
+.box:before,
+.box:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  border-bottom: 18px solid #004b91;
+  border-left: 15px solid transparent;
+  border-right: 32px solid transparent;
+}
+.box:before {
+  border-left: 15px solid #004b91;
+}
+
+.box:after {
+  border-right: 15px solid #004b91;
+}
+
+.box:after {
+  bottom: auto;
+  top: 100%;
+  border-bottom: none;
+  border-top: 15px solid #004b91;
+}
+
+/* Active box */
+.box.active {
+  background: white;
+  color: black;
+}
+
+.active:before,
+.active:after {
+  border-bottom: 15px solid white;
+}
+
+.active:before {
+  border-left: 15px solid white;
+}
+
+.active:after {
+  border-right: 15px solid white;
+}
+
+.active:after {
+  border-bottom: none;
+  border-top: 15px solid white;
+}
+/* footer section css  */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.left-container {
+  background: #004b91;
+  color: white;
+  padding: 80px 0 80px 80px;
+  width: 50%;
+}
+.left-container p a {
+  color: #ffff;
+  font-size: 22px;
+  transition: 0.3s;
+}
+.left-container p a:hover {
+  font-size: 28px;
+  /* box-shadow: 0px 0px 1px; */
+}
+.inside-container-icon {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #dddddd;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* -webkit-box-shadow: 4px 4px 0px 0px #dddddd;
+  -o-box-shadow: 4px 4px 0px 0px #dddddd;
+  -moz-box-shadow: 4px 4px 0px 0px #dddddd;
+  box-shadow: 4px 4px 0px 0px #dddddd; */
+}
+.footer-icon-box i {
+  transform: rotate(-45deg);
+}
+.footer-icon-box i:before {
+  font-size: 22px;
+  color: #ffffff;
+}
+.right-container {
+  background: #196fc2;
+  color: white;
+  display: flex;
+  padding: 80px 80px 80px 0px;
+  width: 50%;
+}
 /* media queries for different screens */
 @media (max-width: 1100px) {
   .content {
