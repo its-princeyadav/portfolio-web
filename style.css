@@ -111,22 +111,7 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-.section-hero {
-  background-color: aqua;
-  padding: 90px 0;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section-services {
-  background-color: rgb(195, 128, 47);
-  padding: 90px 0;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 /* navbar css */
 
 .navbar {
@@ -500,6 +485,75 @@
 .active:after {
   border-bottom: none;
   border-top: 15px solid white;
+}
+/* our form section css  */
+.contact-from-section {
+  padding-top: 80px;
+}
+.form-wrapper {
+  margin: auto;
+  max-width: 100%;
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.our-form-input {
+  border: 0;
+  border-bottom: 1px solid #dddddd;
+  box-shadow: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+}
+.message-section {
+  height: auto;
+  width: auto;
+}
+.your-message-section {
+  margin: auto;
+  max-width: 100%;
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+.button-wrap {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 100%;
+  width: 60.5%;
+}
+.submit-button {
+  padding: 12px 12px;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  margin-top: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Varela", sans-serif;
+  margin-bottom: 80px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+.submit-button:hover {
+  background-color: #196fc2;
+  color: #ffff;
+}
+.form-error-message {
+  color: rgb(166, 65, 65);
+  font-size: 12px;
 }
 /* footer section css  */
 .footer-wrapper {
