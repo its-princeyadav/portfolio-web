@@ -135,15 +135,7 @@
   height: 60px;
   background-color: #004b91;
 }
-/* .logo:before {
-  content: "";
-  position: absolute;
-  width: 2000px;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background-color: #004b91;
-} */
+
 .navbar .logo a {
   position: relative;
   font-family: "Varela", sans-serif;
@@ -436,6 +428,107 @@
 /* .box:hover {
   background: #196fc2;
 } */
+/* our team card section  */
+.team-member {
+  height: 335px;
+  transform-style: preserve-3d;
+  perspective: 1000;
+}
+.team-member:hover .flipper {
+  transform: rotateY(180deg);
+}
+.team-member .flipper {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+.team-member .team-member-front,
+.team-member .team-member-back {
+  height: 335px;
+  backface-visibility: hidden;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.team-member .team-member-front {
+  z-index: 2;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.team-member .team-member-front .team-member-thumb {
+  height: 260px;
+  border: 2px solid #cccccc;
+}
+.team-member .team-member-front .team-member-thumb img {
+  margin: 0 auto;
+}
+.img-res {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.team-member .team-member-front .team-member-front-name {
+  text-align: center;
+  margin: 20px 0 0;
+  font-weight: 600;
+}
+.team-member .team-member-back {
+  padding: 0 20px;
+  display: table;
+  background: #196fc2;
+  text-align: center;
+  color: #ffffff;
+  transform: rotateY(-180deg);
+  z-index: 5;
+}
+.team-member .team-member-back .team-member-info {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+.team-member .team-member-back .team-member-back-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.team-member .team-member-back .team-member-back-position {
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+.team-member .team-member-back .team-member-back-info {
+  position: relative;
+  margin: 60px 0 0;
+  font-size: 12px;
+}
+.team-member .team-member-back .team-member-back-info:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 1px;
+  width: 30px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+.card-section-wrapper {
+  margin: auto;
+  max-width: 100%;
+  width: 74%;
+}
+.cards-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 25px;
+  margin-top: 60px;
+}
 
 .box:before,
 .box:after {
@@ -556,36 +649,13 @@
   font-size: 12px;
 }
 /* footer section css  */
-.footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.left-container {
-  background: #004b91;
-  color: white;
-  padding: 80px 0 80px 80px;
-  width: 50%;
-}
-.left-container p a {
-  color: #ffff;
-  font-size: 22px;
-  transition: 0.3s;
-}
-.left-container p a:hover {
-  font-size: 28px;
-  z-index: 9999;
-  /* box-shadow: 0px 0px 1px; */
-}
-.inside-container-icon {
-  display: flex;
-  justify-content: flex-end;
-}
-.footer-icon-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.footer-main-wrapper {
+  padding: 30px 0;
   text-align: center;
+  background-color: #196fc2;
+}
+.icon-rectangle {
+  display: inline-block;
   width: 50px;
   height: 50px;
   border: 1px solid #dddddd;
@@ -594,25 +664,36 @@
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  /* -webkit-box-shadow: 4px 4px 0px 0px #dddddd;
+  -webkit-box-shadow: 4px 4px 0px 0px #dddddd;
   -o-box-shadow: 4px 4px 0px 0px #dddddd;
   -moz-box-shadow: 4px 4px 0px 0px #dddddd;
-  box-shadow: 4px 4px 0px 0px #dddddd; */
+  box-shadow: 4px 4px 0px 0px #dddddd;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  outline: 0 none;
+  box-shadow: none;
+  margin: 10px 8px 5px;
 }
-.footer-icon-box i {
-  transform: rotate(-45deg);
+.icon-rectangle :hover {
+  background-color: #ffffff;
+  color: #196fc2;
 }
-.footer-icon-box i:before {
+.icon-rectangle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   font-size: 22px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -moz-transform: translate(-50%, -50%) rotate(-45deg);
+  -o-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
   color: #ffffff;
 }
-.right-container {
-  background: #196fc2;
-  color: white;
-  display: flex;
-  padding: 80px 80px 80px 0px;
-  width: 50%;
-}
+
 /* media queries for different screens */
 @media (max-width: 1100px) {
   .content {
