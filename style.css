@@ -592,6 +592,7 @@
   gap: 30px;
   padding-top: 80px;
   padding-bottom: 60px;
+  flex-wrap: wrap;
 }
 .our-form-input {
   border: 0;
@@ -716,6 +717,10 @@
   .menu-list {
     margin-right: 50px;
   }
+  .cards-grid-section {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+  }
 }
 @media (max-width: 768px) {
   body.disabled {
@@ -785,10 +790,28 @@
   .welcome-heading-div h2 {
     font-size: 24px;
   }
+  .form-wrapper {
+    width: 90%;
+  }
+  .your-message-section {
+    width: 90%;
+  }
+  .form-wrapper {
+    padding-top: 40px;
+  }
+  .form-wrapper div {
+    width: 100%;
+  }
+  .footer-main-wrapper {
+    padding: 30px;
+  }
 }
 @media (max-width: 450px) {
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 28px;
+  }
+  .hero-child {
+    font-size: 18px;
   }
   .developing-character-container {
     width: 95%;
@@ -808,5 +831,18 @@
   }
   .our-properties-container {
     padding-top: 30px;
+  }
+  .progress-section-container {
+    padding: 100px 115px 100px 30px;
+  }
+
+  .cards-grid-section {
+    grid-template-columns: 1fr;
+  }
+  .explore-tab:before {
+    display: none;
+  }
+  .explore-tab:after {
+    display: none;
   }
 }
