@@ -72,7 +72,7 @@
     <!-- our characterstics container  -->
     <section class="developing-character-container">
       <div class="welcome-heading-div">
-        <h2 class="text-center">HELLO & WELCOME to our world </h2>
+        <h2 class="text-center">HELLO & WELCOME to our world</h2>
         <p class="text-center">
           <span class="explore-tab">EXPLORE OUR WORLD</span>
         </p>
@@ -414,6 +414,34 @@
         </p>
       </div>
       <form
+        action="/myaction.php"
+        name="myForm"
+        onsubmit="return validateForm()"
+        method="post"
+      >
+        <div class="formdesign" id="name">
+          Name : <input type="text" name="fname" id="" />
+          <span> </span>
+        </div>
+        <div class="formdesign" id="email">
+          Email :<input type="email" name="femail" id="" />
+          <span> </span>
+        </div>
+        <div class="formdesign" id="phone">
+          Phone : <input type="phone " name="fphone" id="" />
+          <span> </span>
+        </div>
+        <div class="formdesign" id="pass">
+          Password : <input type="password " name="fpass" id="" />
+          <span> </span>
+        </div>
+        <div class="formdesign" id="cpass">
+          Confirm Password : <input type="password " name="fcpass" id="" />
+          <span> </span>
+        </div>
+        <input type="but" type="submit" value="submit" />
+      </form>
+      <!-- <form
         id="form"
         name="myForm "
         onsubmit="return validateForm()"
@@ -428,7 +456,7 @@
               name="fname"
               placeholder="Name "
             />
-            <p class="form-error-message">*this is an error</p>
+            <p -message"></p>
           </div>
           <div>
             <input
@@ -438,7 +466,7 @@
               type="email"
               placeholder="Email "
             />
-            <p class="form-error-message">*this is an error</p>
+            <p -message"></p>
           </div>
           <div>
             <input
@@ -448,7 +476,7 @@
               placeholder="Contact No."
               name="fphone"
             />
-            <p class="form-error-message">*this is an error</p>
+            <p -message"></p>
           </div>
         </div>
         <div class="your-message-section">
@@ -464,7 +492,7 @@
         <div class="button-wrap">
           <input type="submit" class="submit-button" value="submit " />
         </div>
-      </form>
+      </form> -->
     </section>
 
     <!-- our footer section  -->
@@ -491,41 +519,17 @@
       </div>
     </footer>
     <!-- our java script section -->
+
     <script>
-      const form = document.getElementById("form");
-      const name = document.getElementById("name");
-      const email = document.getElementById("email");
-      const phone = document.getElementById("phone");
-      // add  event
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        validate();
-      });
-      //defin the validate function
-      const validate = () => {
-        const formval = form.value.trim();
-        const nameval = name.value.trim();
-        const phoneval = phone.value.trim();
-        const emailVal = email.value.trim();
-        // validate username
-        if (nameval === " ") {
-          setErrormsg(name, "name cannot be blank ");
-        } else if (nameval.length <= 2) {
-          setErrormsg(name, "name min 3 char  ");
-        } else {
-          setSuccessMsg(name);
-        }
-        // validate email
-        if (emailVal === " ") {
-          setErrormsg(email, "email cannot be blank ");
-        } else if (!isEmail(emailVal)) {
-          setErrormsg(email, "Not a valid Email  ");
-        } else {
-          setSuccessMsg(email);
-        }
-      };
-    </script>
-    <script>
+      // form validation java script
+      function seterror(id, error) {
+        // sets of error inside tag of id
+      }
+      function validateForm() {
+        var name = document.forms["myForm"]["fname"].value;
+        console.log(name);
+        return false;
+      }
       const body = document.querySelector("body");
       const navbar = document.querySelector(".navbar");
       const menuBtn = document.querySelector(".menu-btn");
