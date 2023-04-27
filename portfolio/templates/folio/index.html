@@ -417,12 +417,12 @@
         </p>
       </div>
       <form
-        id="form"
-        action="/"
-        name="myForm "
-        method="post"
-        onsubmit="return validateForm()"
-      >{% csrf_token %}
+      action="/"
+      name="myForm "
+      method="post"
+      onsubmit="return validateForm()"
+      >
+      {% csrf_token %}
         <div class="form-wrapper">
           <div>
             <input
