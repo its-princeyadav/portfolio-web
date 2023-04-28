@@ -431,8 +431,9 @@
               type="text"
               name="fname"
               placeholder="Name "
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
           <div>
             <input
@@ -441,8 +442,9 @@
               name="femail"
               type="email"
               placeholder="Email "
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
           <div>
             <input
@@ -451,8 +453,9 @@
               type="phone"
               placeholder="Contact No."
               name="fphone"
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
         </div>
         <div class="your-message-section">
@@ -463,6 +466,7 @@
             id="message"
             cols="130"
             rows="7"
+            required
           ></textarea>
         </div>
         <div class="button-wrap">
