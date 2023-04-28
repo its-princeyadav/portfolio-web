@@ -181,7 +181,7 @@
 /* parallax container css  */
 .parallax-div {
   /* The image used */
-  background: url("../assest/images/parallax.jpg") center no-repeat fixed;
+  background: url(./assest/images/parallax.jpg) center no-repeat fixed;
 
   /* Set a specific height */
   min-height: 400px;
