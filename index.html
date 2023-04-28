@@ -421,25 +421,25 @@
       >
         <div class="formdesign" id="name">
           Name : <input type="text" name="fname" id="" />
-          <span> </span>
+          <span class="formerror"> </span>
         </div>
         <div class="formdesign" id="email">
           Email :<input type="email" name="femail" id="" />
-          <span> </span>
+          <span class="formerror"></span>
         </div>
         <div class="formdesign" id="phone">
           Phone : <input type="phone " name="fphone" id="" />
-          <span> </span>
+          <span class="formerror"></span>
         </div>
         <div class="formdesign" id="pass">
           Password : <input type="password " name="fpass" id="" />
-          <span> </span>
+          <span class="formerror"></span>
         </div>
         <div class="formdesign" id="cpass">
           Confirm Password : <input type="password " name="fcpass" id="" />
-          <span> </span>
+          <span class="formerror"></span>
         </div>
-        <input type="but" type="submit" value="submit" />
+        <input class="submit-button" type="but" type="submit" value="submit" />
       </form>
       <!-- <form
         id="form"
@@ -524,11 +524,17 @@
       // form validation java script
       function seterror(id, error) {
         // sets of error inside tag of id
+        element = document.getElementById(id);
+        element = getElemensByClassName("formerror")[0].innerHTML = error;
       }
       function validateForm() {
+        var returnval = true;
+        //perform validation and if validation fails , set the value of returnval to false
         var name = document.forms["myForm"]["fname"].value;
-        console.log(name);
-        return false;
+        if (name.length < 5) {
+          seterror("name", "Length of name is too short");
+          returnval = false;
+        }
       }
       const body = document.querySelector("body");
       const navbar = document.querySelector(".navbar");
