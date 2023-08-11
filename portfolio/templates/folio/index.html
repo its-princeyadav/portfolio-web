@@ -1,12 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="utility.css" />
-    <!-- <link rel="stylesheet" href="plugin.css" /> -->
+    <title>Aditya Portfolio</title>
+    <link rel="stylesheet" href="{% static 'folio/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'folio/utility.css' %}" />
+    {% comment %}
+    <link rel="stylesheet" href="{% static 'folio/plugin.css' %}" />
+    {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,14 +29,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Aditya Portfolio</title>
   </head>
   <body>
     <!-- main home into div  -->
     <div class="main-home-intro background-overlay">
       <div class="hero-content inline align-centre justify-centre">
-        <h1 class="text-center">I am Aditya Singh</h1>
-        <p class="hero-child text-center">I'M A CREATIVE WEB DEVELOPER</p>
+        <h1 class="text-center">YOU CAN TRUST ON US  </h1>
+        <p class="hero-child text-center">WE ARE CREATIVE WEB DEVELOPER</p>
         <p class="text-center">
           I STAND ON A SWEET SPOT WHERE DESIGN & CODE INTERSECTS.
         </p>
@@ -72,7 +75,7 @@
     <!-- our characterstics container  -->
     <section class="developing-character-container">
       <div class="welcome-heading-div">
-        <h2 class="text-center">HELLO & WELCOME to our world </h2>
+        <h2 class="text-center">HELLO & WELCOME to our world</h2>
         <p class="text-center">
           <span class="explore-tab">EXPLORE OUR WORLD</span>
         </p>
@@ -106,8 +109,8 @@
         </div>
         <div class="service-col1 diamnd-container-wrapper">
           <div class="dimand-container">
-            <div class="sub-dimand-container">
-              <p>Aditya</p>
+            <div class="">
+              <p>Quality Work </p>
             </div>
           </div>
         </div>
@@ -232,7 +235,7 @@
             <div class="team-member-front">
               <div class="team-member-thumb">
                 <img
-                  src="/assest/images/card1.jpg"
+                  src="{% static 'folio/assest/images/card1.jpg' %}"
                   class="img-res"
                   alt="website template image"
                 />
@@ -276,7 +279,7 @@
             <div class="team-member-front">
               <div class="team-member-thumb">
                 <img
-                  src="/assest/images/card2.jpg"
+                  src="{% static 'folio/assest/images/card2.jpg' %}"
                   class="img-res"
                   alt="website template image"
                 />
@@ -320,7 +323,7 @@
             <div class="team-member-front">
               <div class="team-member-thumb">
                 <img
-                  src="/assest/images/card3.jpg"
+                  src="{% static 'folio/assest/images/card3.jpg' %}"
                   class="img-res"
                   alt="website template image"
                 />
@@ -364,7 +367,7 @@
             <div class="team-member-front">
               <div class="team-member-thumb">
                 <img
-                  src="/assest/images/card4.jpg"
+                  src="{% static 'folio/assest/images/card4.jpg' %}"
                   class="img-res"
                   alt="website template image"
                 />
@@ -414,11 +417,12 @@
         </p>
       </div>
       <form
-        id="form"
-        name="myForm "
-        onsubmit="return validateForm()"
-        method="post"
+      action="/"
+      name="myForm "
+      method="post"
+      onsubmit="return validateForm()"
       >
+      {% csrf_token %}
         <div class="form-wrapper">
           <div>
             <input
@@ -427,8 +431,9 @@
               type="text"
               name="fname"
               placeholder="Name "
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
           <div>
             <input
@@ -437,8 +442,9 @@
               name="femail"
               type="email"
               placeholder="Email "
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
           <div>
             <input
@@ -447,22 +453,24 @@
               type="phone"
               placeholder="Contact No."
               name="fphone"
+              required
             />
-            <p class="form-error-message">*this is an error</p>
+            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
           </div>
         </div>
         <div class="your-message-section">
           <textarea
             class="our-form-input message-section"
             placeholder="Your Message "
-            name=""
-            id=""
+            name="msg"
+            id="message"
             cols="130"
             rows="7"
+            required
           ></textarea>
         </div>
         <div class="button-wrap">
-          <input type="submit" class="submit-button" value="submit " />
+          <input type="submit" class="submit-button" value="submit" />
         </div>
       </form>
     </section>
@@ -546,7 +554,7 @@
           : navbar.classList.remove("sticky");
       };
     </script>
-    <script src="index.js"></script>
+    <script src="{% static 'folio/index.js' %}"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
