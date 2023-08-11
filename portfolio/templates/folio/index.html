@@ -11,6 +11,7 @@
     {% comment %}
     <link rel="stylesheet" href="{% static 'folio/plugin.css' %}" />
     {% endcomment %}
+    <link rel="stylesheet" href="extra.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -216,7 +217,12 @@
         <div class="new-btn-wrap">
           <button class="box">Hire Me Now</button>
         </div>
-        <div></div>
+        <div>
+          <p class="projects-links-heading">See Our Projects</p>
+        </div>
+        <!-- <div class="welcome-heading-div">
+          <h2 class="text-center">See Our Projects</h2>
+        </div> -->
       </div>
     </section>
     <!-- our team card section -->
@@ -417,12 +423,12 @@
         </p>
       </div>
       <form
-      action="/"
-      name="myForm "
-      method="post"
-      onsubmit="return validateForm()"
+        action="/"
+        name="myForm "
+        method="post"
+        onsubmit="return validateForm()"
       >
-      {% csrf_token %}
+        {% csrf_token %}
         <div class="form-wrapper">
           <div>
             <input
@@ -433,7 +439,9 @@
               placeholder="Name "
               required
             />
-            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
+            {% comment %}
+            <p class="form-error-message">*this is an error</p>
+            {% endcomment %}
           </div>
           <div>
             <input
@@ -444,7 +452,9 @@
               placeholder="Email "
               required
             />
-            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
+            {% comment %}
+            <p class="form-error-message">*this is an error</p>
+            {% endcomment %}
           </div>
           <div>
             <input
@@ -455,7 +465,9 @@
               name="fphone"
               required
             />
-            {% comment %} <p class="form-error-message">*this is an error</p> {% endcomment %}
+            {% comment %}
+            <p class="form-error-message">*this is an error</p>
+            {% endcomment %}
           </div>
         </div>
         <div class="your-message-section">
